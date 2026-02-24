@@ -1,0 +1,198 @@
+{
+    "ADE" :	{ 
+        "name": "ADMINISTRAÇÃO INTENSIVO",
+         "tutors": ["07599221956"]
+        },
+    "ADM" : { 
+        "name": "ADMINISTRAÇÃO", 
+        "tutors": ["07599221956"]
+    },
+    "ADS" :	{ 
+        "name": "ANÁLISE E DESENVOLVIMENTO DE SISTEMAS", 
+        "tutors": ["12354534990","06976644903"]
+    },
+    "BIO" :	{ 
+        "name": "BIOMEDICINA", 
+        "tutors": ["00949844926"]
+    },
+    "CIA" :	{ 
+        "name": "CIÊNCIA DE DADOS E INTELIGÊNCIA ARTIFICIAL", 
+        "tutors": ["12354534990","06976644903"]
+    },
+    "CIE" :	{ 
+        "name": "CIÊNCIAS CONTÁBEIS", 
+        "tutors": ["03600448919","07238491966"]
+    },
+    "CON" :	{ 
+        "name": "CIÊNCIAS CONTÁBEIS", 
+        "tutors": ["03600448919","07238491966"]
+    },
+    "EDF" :	{ 
+        "name": "EDUCAÇÃO FÍSICA", 
+        "tutors": ["00949844926"]
+    },
+    "EDP" :	{ 
+        "name": "ENGENHARIA DE PRODUÇÃO", 
+        "tutors": ["08819057980"]
+    },
+    "EFS" :	{ 
+        "name": "EDUCAÇÃO FÍSICA", 
+        "tutors": ["00949844926"]
+    },
+    "EGC" :	{ 
+        "name": "ENGENHARIA CIVIL", 
+        "tutors": ["08819057980"]
+    },
+    "EGE" :	{ 
+        "name": "ENGENHARIA ELÉTRICA", 
+        "tutors": ["08819057980"]
+    },
+    "EGS" :	{ 
+        "name": "ENGENHARIA DE SOFTWARE", 
+        "tutors": ["12354534990","06976644903"]
+    },
+    "ELT" :	{ 
+        "name": "ENGENHARIA ELÉTRICA", 
+        "tutors": ["08819057980"]
+    },
+    "ENC" :	{ 
+        "name": "ENGENHARIA CIVIL", 
+        "tutors": ["08819057980"]
+    },
+    "ENF" :	{ 
+        "name": "ENFERMAGEM", 
+        "tutors": ["11268714941"]
+    },
+    "EPR" :	{ 
+        "name": "ENGENHARIA DE PRODUÇÃO", 
+        "tutors": ["08819057980"]
+    },
+    "EST" :	{ 
+        "name": "ESTÉTICA E COSMÉTICA", 
+        "tutors": ["00949844926"]
+    },
+    "FUJ" :	{ 
+        "name": "SERVIÇOS JURIDICOS", 
+        "tutors": ["03600448919"]
+    },
+    "GAM" :	{ 
+        "name": "GESTÃO AMBIENTAL", 
+        "tutors": ["03600448919"]
+    },
+    "GCO" :	{ 
+        "name": "GESTÃO COMERCIAL", 
+        "tutors": ["03600448919"]
+    },
+    "GEP" :	{ 
+        "name": "GESTÃO PÚBLICA", 
+        "tutors": ["03600448919"]
+    },
+    "GFI" :	{ 
+        "name": "GESTÃO FINANCEIRA", 
+        "tutors": ["03600448919"]
+    },
+    "GRH" :	{ 
+        "name": "GESTÃO DE RECURSOS HUMANOS", 
+        "tutors": ["03600448919"]
+    },
+    "IPC" :	{ 
+        "name": "INOVACAO E PENSAMENTO CRIATIVO", 
+        "tutors": ["05595944960"]
+    },
+    "LIP" :	{ 
+        "name": "LETRAS", 
+        "tutors": ["03304110984"]
+    },
+    "LOG" :	{ 
+        "name": "LOGÍSTICA", 
+        "tutors": ["03600448919"]
+    },
+    "MKD" :	{ 
+        "name": "MARKETING DIGITAL", 
+        "tutors": ["07599221956"]
+    },
+    "MKT" :	{ 
+        "name": "MARKETING", 
+        "tutors": ["03600448919"]
+    },
+    "MTP" :	{ 
+        "name": "MINISTÉRIO PASTORAL", 
+        "tutors": ["01226309984"]
+    },
+    "PDA" :	{ 
+        "name": "PEDAGOGIA", 
+        "tutors": ["02265112941","03304110984","05996388936","03665662966"]
+    },
+    "PDG" :	{ 
+        "name": "PODOLOGIA", 
+        "tutors": ["11268714941","07871729950"]
+    },
+    "PED" :	{ 
+        "name": "PEDAGOGIA", 
+        "tutors": ["02265112941","03304110984","05996388936","03665662966"]
+    },
+    "PGE" :	{ 
+        "name": "PROCESSOS GERENCIAIS", 
+        "tutors": ["03600448919"]
+    },
+    "POD" :	{ 
+        "name": "PODOLOGIA", 
+        "tutors": ["11268714941","07871729950"]
+    },
+    "PSN" :	{ 
+        "name": "PSICANÁLISE CLÍNICA", 
+        "tutors": ["05446529910"]
+    },
+    "RAD" :	{ 
+        "name": "RADIOLOGIA", 
+        "tutors": ["11268714941","07871729950"]
+    },
+    "RDG" :	{ 
+        "name": "RADIOLOGIA", 
+        "tutors": ["11268714941","07871729950"]
+    },
+    "SER" :	{ 
+        "name": "SERVIÇO SOCIAL", 
+        "tutors": ["05446529910"]
+    },
+    "STG" :	{ 
+        "name": "GASTRONOMIA", 
+        "tutors": ["05595944960"]
+    },
+    "TEO" :	{ 
+        "name": "TEOLOGIA", 
+        "tutors": ["01226309984"]
+    },
+    "CEC":{
+        "name": "CIÊNCIAS ECONÔMICAS", 
+        "tutors": ["05446529910"]
+    },
+    "FON":{
+        "name": "FONOAUDIOLOGIA", 
+        "tutors": ["11268714941"]
+    },
+    "DSI":{
+        "name": "DESIGN DE INTERIORES", 
+        "tutors": ["08819057980"]
+    },
+    "PRA":{
+        "name": "PRODUÇÃO AUDIOVISUAL", 
+        "tutors": ["08819057980"]
+    },
+    "RLI":{
+        "name": "RELAÇÕES INTERNACIONAIS", 
+        "tutors": ["02265112941"]
+    },
+    "CSP":{
+        "name": "COMUNICAÇÃO SOCIAL - PUBLICIDADE E PROPAGANDA", 
+        "tutors": ["02265112941"]
+    },
+    "IAR":{
+        "name": "INTELIGÊNCIA ARTIFICIAL", 
+        "tutors": ["12354534990"]
+    },
+    "SCI":{
+        "name": "SEGURANÇA CIBERNÉTICA", 
+        "tutors": ["12354534990"]
+    }
+}

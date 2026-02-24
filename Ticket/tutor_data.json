@@ -1,0 +1,82 @@
+{
+    "02265112941":	{
+        "nome" : "ANDRESA NOBREGA VILELA",
+        "email" :	"andresa.vilela@unifil.br",
+        "active":	true
+    },
+    "03304110984":	{
+        "nome" : "ANDRESSA MASSONI DA COSTA",
+        "email" :	"andressa.costa@unifil.br",
+        "active":	true
+    },
+    "11268714941":	{
+        "nome" : "CINARA BOZOLAN COPPO",
+        "email" :	"cinara.coppo@unifil.br",
+        "active":	true
+    },
+    "12354534990":	{
+        "nome" : "ERON PONCE PEREIRA",
+        "email" :	"eron.pereira@unifil.br",
+        "active":	true
+    },
+    "05595944960":	{
+        "nome" : "GABRIELA RODRIGUES VILLATORE",
+        "email" :	"gabriela.villatore@unifil.br",
+        "active":	true
+    },
+    "00949844926":	{
+        "nome" : "KÁTIA MARIA DE ABREU",
+        "email" :	"katia.abreu@unifil.br",
+        "active":	true
+    },
+    "03600448919":	{
+        "nome" : "LIGIA MARIA BORTOTI CRUZ BRANCO",
+        "email" :	"ligia.cruz@unifil.br",
+        "active":	true
+    },
+    "05996388936":	{
+        "nome" : "LUCIANA RAMOS RODRIGUES DE CARVALHO",
+        "email" :	"luciana.carvalho@unifil.br",
+        "active":	true
+    },
+    "06976644903":	{
+        "nome" : "MAICON ROGER  DO ROSÁRIO",
+        "email" :	"maicon.roger@unifil.br",
+        "active":	true
+    },
+    "01226309984":	{
+        "nome" : "MARTINHO GILSON CARDOSO CHINGULO",
+        "email" : 	"martinho.chingulo@unifil.br",
+        "active":	true
+    },
+    "07599221956":	{
+        "nome" : "NATALIA NAKAY GUANDALINI",
+        "email" :	"nnakay@unifil.br",
+        "active":	true
+    },
+    "05446529910":	{
+        "nome" : "SUELEN REGINA BATISTA AGUILERA",
+        "email" : 	"suelen.aguilera@unifil.br",
+        "active":	true
+    },
+    "08819057980":	{
+        "nome" : "VICTOR FURINI NEVES",
+        "email" :	"victor.neves@unifil.br",
+        "active":	true
+    },
+    "03665662966":	{
+        "nome" : "VIVIAN ROCHA RODRIGUES",
+        "email" :	"vrodrigues@unifil.br",
+        "active":	true
+    },
+    "07238491966":	{
+        "nome" : "JÉSSICA XAVIER MATESCO",
+        "email" :	"jessica.matesco@unifil.br",
+        "active":	false
+    },
+    "07871729950":	{
+        "nome" : "THAMARA CONTIERO",
+        "email" : 	"thamara.contiero@unifil.br",
+        "active":	false
+    }
+}

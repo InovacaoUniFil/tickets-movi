@@ -1,2 +1,6 @@
-flask==2.2.2
-requests==2.7
+flask>=3.1.2
+requests>=2.7
+pandas>=2.2.2
+openpyxl>=3.1.2
+Werkzeug>=2.2.2
+dotenv>=0.9.9
