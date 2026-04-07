@@ -122,23 +122,33 @@ def hello_world():
     form_dict = request.form.to_dict(flat=False)
     print(form_dict)
     if form_dict['custom_canvas_course_id'][0] == '$Canvas.course.id':
-        enrollments
+        enrollments = []
         canvas_token = os.environ.get("CANVAS_TOKEN")
         user_id = form_dict['custom_user_id'][0]
         #Chamada a API
         try:
-            enrollments = requests.get("https://unifil.instructure.com/api/v1/users/"+user_id+"/enrollments?access_token="+canvas_token+"&per_page=100",headers={'Authorization':"Bearer "+canvas_token} ,verify=BASE_DIR / "static/certs.pem")
+            enrollments = requests.get("https://unifil.instructure.com/api/v1/users/"+user_id+"/enrollments?state[]=completed&state[]=active&per_page=100&access_token="+canvas_token+"&per_page=100",headers={'Authorization':"Bearer "+canvas_token} ,verify=BASE_DIR / "static/certs.pem")
             if (enrollments.status_code == 429):
-                time.sleep(70)
-                enrollments = requests.get("https://unifil.instructure.com/api/v1/users/"+user_id+"/enrollments?access_token="+canvas_token+"&per_page=100",headers={'Authorization':"Bearer "+canvas_token} ,verify=BASE_DIR / "static/certs.pem")
+                time.sleep(50)
+                enrollments = requests.get("https://unifil.instructure.com/api/v1/users/"+user_id+"/enrollments?state[]=completed&state[]=active&per_page=100&access_token="+canvas_token+"&per_page=100",headers={'Authorization':"Bearer "+canvas_token} ,verify=BASE_DIR / "static/certs.pem")
         except:
-            time.sleep(70)
-            enrollments = requests.get("https://unifil.instructure.com/api/v1/users/"+user_id+"/enrollments?access_token="+canvas_token+"&per_page=100",headers={'Authorization':"Bearer "+canvas_token} ,verify=BASE_DIR / "static/certs.pem")
+            time.sleep(50)
+            enrollments = requests.get("https://unifil.instructure.com/api/v1/users/"+user_id+"/enrollments?state[]=completed&state[]=active&per_page=100&access_token="+canvas_token+"&per_page=100",headers={'Authorization':"Bearer "+canvas_token} ,verify=BASE_DIR / "static/certs.pem")
         enrollments = json.loads(enrollments.content)
-        enrollments_list = []
+        courses_list = []
         for e in enrollments:
-            enrollments_list.append({
-                'course_id':e['course_id']
+            try:
+                course = requests.get("https://unifil.instructure.com/api/v1/courses/"+e['course_id']+"?access_token="+canvas_token+"&per_page=100",headers={'Authorization':"Bearer "+canvas_token} ,verify=BASE_DIR / "static/certs.pem")
+                if (enrollments.status_code == 429):
+                    time.sleep(50)
+                    course = requests.get("https://unifil.instructure.com/api/v1/courses/"+e['course_id']+"/enrollments?access_token="+canvas_token+"&per_page=100",headers={'Authorization':"Bearer "+canvas_token} ,verify=BASE_DIR / "static/certs.pem")
+            except:
+                time.sleep(50)
+                course = requests.get("https://unifil.instructure.com/api/v1/courses/"+e['course_id']+"/enrollments?access_token="+canvas_token+"&per_page=100",headers={'Authorization':"Bearer "+canvas_token} ,verify=BASE_DIR / "static/certs.pem")
+        
+            courses_list.append({
+                'course_id':e['course_id'],
+                'course_name':course['name']
             })
     return render_template("index.html", requestData = request.form, error = "")
 
