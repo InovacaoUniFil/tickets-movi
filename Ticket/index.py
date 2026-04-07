@@ -124,6 +124,7 @@ def hello_world():
 @app.route("/sendToMovi", methods = ['POST'])
 def send_to_movi():
     movi_token = os.environ.get("MOVI_TOKEN")
+    canvas_token = os.environ.get("CANVAS_TOKEN")
     #Check if Form is filled or return error
     print("Check if Form is filled or return error")
     if (str(request.form["text_input"]) == "") or (str(request.form["category_type"]) == "") or (str(request.form["subject_type"]) == ""):
