@@ -12,6 +12,7 @@ movi_api_url = movi_url+'public/v1/'
 
 movi_token = 'token=478d1b60-5efc-461c-898b-953d7148bdf9'
 
+BASE_DIR = Path(__file__).resolve().parent
 UPLOAD_FOLDER = './SaveFolder'
 ALLOWED_EXTENSIONS = {'txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'}
 
@@ -131,7 +132,17 @@ def send_to_movi():
     print("Check if user exists or create new user")
     user = requests.get(movi_api_url+'persons?'+movi_token+'&id='+str(request.form["custom_user_login"]))
     if(user.status_code==404):
-        user = create_new_user(request.form["custom_user_login"],request.form["custom_user_id"],request.form["custom_user_name"],request.form["custom_user_email"])
+        #Chamada a API
+        try:
+            user_data = requests.get("https://unifil.instructure.com/api/v1/users/"+request.form["custom_user_id"]+"?access_token="+canvas_token+"&per_page=100",headers={'Authorization':"Bearer "+canvas_token} ,verify=BASE_DIR / "static/certs.pem")
+            if (user_data.status_code == 429):
+                time.sleep(30)
+                user_data = requests.get("https://unifil.instructure.com/api/v1/users/"+request.form["custom_user_id"]+"?access_token="+canvas_token+"&per_page=100",headers={'Authorization':"Bearer "+canvas_token} ,verify=BASE_DIR / "static/certs.pem")
+        except:
+            time.sleep(30)
+            user_data = requests.get("https://unifil.instructure.com/api/v1/users/"+request.form["custom_user_id"]+"?access_token="+canvas_token+"&per_page=100",headers={'Authorization':"Bearer "+canvas_token} ,verify=BASE_DIR / "static/certs.pem")
+        user_data = json.loads(user_data.content)
+        user = create_new_user(request.form["custom_user_login"],user_data["sis_user_id"],request.form["custom_user_name"],request.form["custom_user_email"])
     else:
         user = json.loads(user.content)
 
