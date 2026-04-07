@@ -4,6 +4,7 @@ import requests
 import time
 import os
 import random
+from pathlib import Path
 from dotenv import load_dotenv
 load_dotenv()
 
