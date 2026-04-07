@@ -119,6 +119,27 @@ def allowed_file(filename):
 
 @app.route("/", methods = ['POST'])
 def hello_world():
+    form_dict = request.form.to_dict(flat=False)
+    print(form_dict)
+    if form_dict['custom_canvas_course_id'][0] == '$Canvas.course.id':
+        enrollments
+        canvas_token = os.environ.get("CANVAS_TOKEN")
+        user_id = form_dict['custom_user_id'][0]
+        #Chamada a API
+        try:
+            enrollments = requests.get("https://unifil.instructure.com/api/v1/users/"+user_id+"/enrollments?access_token="+canvas_token+"&per_page=100",headers={'Authorization':"Bearer "+canvas_token} ,verify=BASE_DIR / "static/certs.pem")
+            if (enrollments.status_code == 429):
+                time.sleep(70)
+                enrollments = requests.get("https://unifil.instructure.com/api/v1/users/"+user_id+"/enrollments?access_token="+canvas_token+"&per_page=100",headers={'Authorization':"Bearer "+canvas_token} ,verify=BASE_DIR / "static/certs.pem")
+        except:
+            time.sleep(70)
+            enrollments = requests.get("https://unifil.instructure.com/api/v1/users/"+user_id+"/enrollments?access_token="+canvas_token+"&per_page=100",headers={'Authorization':"Bearer "+canvas_token} ,verify=BASE_DIR / "static/certs.pem")
+        enrollments = json.loads(enrollments.content)
+        enrollments_list = []
+        for e in enrollments:
+            enrollments_list.append({
+                'course_id':e['course_id']
+            })
     return render_template("index.html", requestData = request.form, error = "")
 
 @app.route("/sendToMovi", methods = ['POST'])
@@ -221,7 +242,7 @@ def send_to_movi():
         #Ticket do Apoio
         owner_name = "Apoio - Graduação EaD"
         owner_team = "EaD - Apoio"
-        category = str(request.form["category_type"])
+        category = "Apoio - "+str(request.form["category_type"])
     else:
         #Ticket Tutoria
         print("Procura o tutor no Sistema")
