@@ -126,6 +126,7 @@ def hello_world():
         canvas_token = os.environ.get("CANVAS_TOKEN")
         user_id = form_dict['custom_user_id'][0]
         #Chamada a API
+        """
         try:
             enrollments = requests.get("https://unifil.instructure.com/api/v1/users/"+user_id+"/enrollments?state[]=completed&state[]=active&per_page=100&access_token="+canvas_token+"&per_page=100",headers={'Authorization':"Bearer "+canvas_token} ,verify=BASE_DIR / "static/certs.pem")
             if (enrollments.status_code == 429):
@@ -150,6 +151,7 @@ def hello_world():
                 'course_id':e['course_id'],
                 'course_name':course['name']
             })
+        """
     return render_template("index.html", requestData = request.form, error = "")
 
 @app.route("/sendToMovi", methods = ['POST'])
