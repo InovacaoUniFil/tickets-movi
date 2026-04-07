@@ -31,10 +31,10 @@ apoio_subjects = [
     "Outros"
 ]
 
-def create_new_user(cpf,name,email):
+def create_new_user(login,cpf,name,email):
     print("create_new_user")
     movi_person_data = {
-        'id' : str(cpf),
+        'id' : str(login),
         'isActive' : True,
         'personType' : 1,
         'profileType' :2,
@@ -46,7 +46,7 @@ def create_new_user(cpf,name,email):
         'cpfCnpj': str(cpf),
         'businessName' : str(name),
         'userName' : str(email),
-        'password' : str(cpf),
+        'password' : str(login),
     }
     print(movi_person_data)
     movi_token = os.environ.get("MOVI_TOKEN")
@@ -131,10 +131,10 @@ def send_to_movi():
     print("Check if user exists or create new user")
     user = requests.get(movi_api_url+'persons?'+movi_token+'&id='+str(request.form["custom_user_login"]))
     if(user.status_code==404):
-        user = create_new_user(request.form["custom_user_login"],request.form["custom_user_name"],request.form["custom_user_email"])
+        user = create_new_user(request.form["custom_user_login"],request.form["custom_user_id"],request.form["custom_user_name"],request.form["custom_user_email"])
     else:
         user = json.loads(user.content)
-        
+
     if type(user) == dict:
         if "Error" in user.keys():
             return user["Error"]
