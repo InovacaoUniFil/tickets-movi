@@ -63,7 +63,7 @@ def create_new_user(login,cpf,name,email):
             break
         else:
             if loops > 50:
-                return({"Error":user})
+                return user
             else:
                 loops+=1
         time.sleep(0.5)
@@ -147,10 +147,7 @@ def send_to_movi():
         user = create_new_user(request.form["custom_user_login"],user_data["sis_user_id"],request.form["custom_user_name"],request.form["custom_user_email"])
     else:
         user = json.loads(user.content)
-
-    if type(user) == dict:
-        if "Error" in user.keys():
-            return user["Error"]
+    
     #alimentar Webhook
     print("alimentar Webhook")
     if str(request.form["custom_canvas_course_id"]) != "$Canvas.course.id":
