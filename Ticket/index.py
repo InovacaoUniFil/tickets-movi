@@ -53,10 +53,17 @@ def create_new_user(cpf,name,email):
     user = requests.post(movi_api_url+'persons?'+movi_token, json = movi_person_data)
     time.sleep(0.5)
     print("created user")
+    print(json.loads(user.content))
+    loops = 0
     while True:
         user = requests.get(movi_api_url+'persons?'+movi_token+'&id='+str(cpf))
         if user.status_code!=404:
             break
+        else:
+            if loops > 50:
+                return({"Error":user})
+            else:
+                loops+=1
         time.sleep(0.5)
     return json.loads(user.content)
 
@@ -128,6 +135,9 @@ def send_to_movi():
     else:
         user = json.loads(user.content)
         
+    if type(user) == dict:
+        if "Error" in user.keys():
+            return user["Error"]
     #alimentar Webhook
     print("alimentar Webhook")
     if str(request.form["custom_canvas_course_id"]) != "$Canvas.course.id":
